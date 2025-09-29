@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karen Perez - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@heroui/react@2.8.2/dist/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066cc',
+                        secondary: '#4d94ff',
+                        background: '#f0f8ff',
+                        text: '#333333'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f8ff;
+            color: #333333;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-primary text-white p-4 shadow-md">
+        <nav class="container mx-auto flex flex-wrap justify-between items-center">
+            <a href="/" class="text-2xl font-bold">Karen Perez</a>
+            <ul class="flex flex-wrap space-x-4 mt-4 sm:mt-0">
+                <li><a href="/" class="hover:text-secondary transition duration-300">Inicio</a></li>
+                <li><a href="/about" class="hover:text-secondary transition duration-300">Sobre mí</a></li>
+                <li><a href="/skills" class="hover:text-secondary transition duration-300">Habilidades</a></li>
+                <li><a href="/projects" class="hover:text-secondary transition duration-300">Proyectos</a></li>
+                <li><a href="/contact" class="hover:text-secondary transition duration-300">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto my-8 px-4 sm:px-6 lg:px-8 flex-grow">
+        <div th:replace="${content}">
+            <!-- Content will be inserted here -->
+        </div>
+    </main>
+
+    <footer class="bg-primary text-white p-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Karen Yulieth Perez</p>
+            <div class="mt-2">
+                <a href="https://www.linkedin.com/in/karen-perez-b81497339" target="_blank" class="hover:text-secondary transition duration-300">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script>
+        function downloadCV() {
+            const doc = new jspdf.jsPDF();
+            doc.text("Karen Yulieth Perez - CV", 10, 10);
+            doc.text("Este es un CV placeholder.", 10, 20);
+            doc.save("Karen_Perez_CV.pdf");
+        }
+    </script>
+</body>
+</html>

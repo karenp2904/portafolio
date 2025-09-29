@@ -1,0 +1,10 @@
+<div th:fragment="content" class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-primary">Habilidades</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div th:each="skill : ${skills}" class="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4 transition duration-300 hover:shadow-lg">
+            <span class="icon text-3xl text-secondary" th:data-icon="${skill.icon}"></span>
+            <span class="text-lg text-gray-700" th:text="${skill.name}"></span>
+        </div>
+    </div>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</div>

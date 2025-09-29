@@ -1,0 +1,7 @@
+<div th:fragment="content" class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-6 text-primary" th:text="${fullName}"></h1>
+    <p class="text-xl mb-8 text-gray-700" th:text="${description}"></p>
+    <button onclick="downloadCV()" class="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-primary transition duration-300 shadow-md">
+        Descargar CV
+    </button>
+</div>

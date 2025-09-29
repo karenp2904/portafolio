@@ -1,0 +1,54 @@
+<div th:fragment="content" class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-primary">Contacto</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold mb-4 text-secondary">Información de contacto</h3>
+            <ul class="space-y-3 text-gray-700">
+                <li class="flex items-center">
+                    <span class="icon mr-2 text-primary" data-icon="lucide:mail"></span>
+                    karenperezlun04@gmail.com
+                </li>
+                <li class="flex items-center">
+                    <span class="icon mr-2 text-primary" data-icon="lucide:mail"></span>
+                    patriciaardilabaez@hotmail.com
+                </li>
+                <li class="flex items-center">
+                    <span class="icon mr-2 text-primary" data-icon="logos:linkedin-icon"></span>
+                    <a href="https://www.linkedin.com/in/karen-perez-b81497339" target="_blank" class="text-secondary hover:underline">Karen Perez</a>
+                </li>
+                <li class="flex items-center">
+                    <span class="icon mr-2 text-primary" data-icon="logos:whatsapp"></span>
+                    +57 3157660279
+                </li>
+            </ul>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold mb-4 text-secondary">Envíame un mensaje</h3>
+            <form id="contactForm" class="space-y-4">
+                <div>
+                    <label for="name" class="block mb-1 text-gray-700">Nombre</label>
+                    <input type="text" id="name" name="name" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary">
+                </div>
+                <div>
+                    <label for="email" class="block mb-1 text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary">
+                </div>
+                <div>
+                    <label for="message" class="block mb-1 text-gray-700">Mensaje</label>
+                    <textarea id="message" name="message" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary" rows="4"></textarea>
+                </div>
+                <button type="submit" class="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-primary transition duration-300 shadow-md w-full">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Aquí iría la lógica para enviar el formulario al backend
+            alert('Mensaje enviado con éxito (simulado)');
+            this.reset();
+        });
+    </script>
+</div>
